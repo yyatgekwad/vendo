@@ -49,9 +49,6 @@ const translations = {
     "account-password-mismatch": "كلمتا المرور غير متطابقتين.",
     "account-confirmation-required": "تم إنشاء الحساب، لكن تسجيل الدخول لم يكتمل. تحقق من إعداد تأكيد البريد في Supabase.",
     "account-service-error": "تعذر الاتصال بخدمة الحسابات. تحقق من الإنترنت وحاول مرة أخرى.",
-    "google-continue": "المتابعة باستخدام Google",
-    "google-setup-required": "لم يتم إعداد تسجيل الدخول باستخدام Google في Supabase بعد.",
-    "google-host-required": "تسجيل الدخول باستخدام Google يتطلب تشغيل الموقع على رابط HTTPS منشور.",
     "dashboard-tagline": "بيع ذكي. نتائج حقيقية.",
     "nav-overview": "نظرة عامة",
     "nav-accounts": "ربط الحسابات",
@@ -253,9 +250,6 @@ const translations = {
     "account-password-mismatch": "Passwords do not match.",
     "account-confirmation-required": "The account was created, but sign-in did not complete. Check the email confirmation setting in Supabase.",
     "account-service-error": "Could not connect to the account service. Check your internet connection and try again.",
-    "google-continue": "Continue with Google",
-    "google-setup-required": "Google sign-in is not configured in Supabase yet.",
-    "google-host-required": "Google sign-in requires the site to be deployed at an HTTPS URL.",
     "dashboard-tagline": "Smart selling. Real results.",
     "nav-overview": "Overview",
     "nav-accounts": "Connect accounts",
@@ -603,43 +597,11 @@ function getAuthErrorMessage(error) {
   if (normalized.includes("failed to fetch") || normalized.includes("network")) {
     return translations[currentLanguage]["account-service-error"];
   }
-  if (normalized.includes("provider is not enabled") || normalized.includes("unsupported provider")) {
-    return translations[currentLanguage]["google-setup-required"];
-  }
   return message || translations[currentLanguage]["account-service-error"];
 }
 
 const signupForm = document.querySelector("[data-signup-form]");
 const loginForm = document.querySelector("[data-login-form]");
-
-document.querySelectorAll("[data-google-auth]").forEach((button) => {
-  button.addEventListener("click", async () => {
-    const form = button.closest(".login-card")?.querySelector("form");
-    if (!(button instanceof HTMLButtonElement) || !(form instanceof HTMLFormElement)) return;
-    if (window.location.protocol === "file:") {
-      showFormMessage(form, translations[currentLanguage]["google-host-required"], true);
-      return;
-    }
-
-    button.disabled = true;
-    try {
-      const client = await getSupabaseClient();
-      const redirectTo = new URL("dashboard.html", window.location.href).href;
-      const { error } = await client.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo,
-          queryParams: { prompt: "select_account" }
-        }
-      });
-      if (error) throw error;
-    } catch (error) {
-      console.error("Could not start Google sign-in.", error);
-      showFormMessage(form, getAuthErrorMessage(error), true);
-      button.disabled = false;
-    }
-  });
-});
 
 signupForm?.addEventListener("input", () => updatePasswordMatchMessage(signupForm));
 
