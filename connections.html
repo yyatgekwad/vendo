@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07101f" />
+    <meta name="description" content="اربط حسابات التواصل ومتجرك مع Vendo." />
+    <title>ربط الحسابات — Vendo</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body class="dashboard-page" data-page-title="nav-accounts">
+    <div class="dashboard-layout">
+      <button class="dashboard-backdrop" type="button" data-dashboard-backdrop data-i18n-aria="menu-close" aria-label="إغلاق القائمة"></button>
+      <aside class="dashboard-sidebar" id="dashboard-sidebar">
+        <a class="dashboard-brand" href="dashboard.html"><img class="brand-mark" src="assets/vendo-logo.svg" alt="" /><span><strong>VENDO</strong><small data-i18n="dashboard-tagline">بيع ذكي. نتائج حقيقية.</small></span></a>
+        <nav class="dashboard-nav" aria-label="القائمة الرئيسية">
+          <a class="dashboard-nav-link" href="dashboard.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#overview"></use></svg></span><span data-i18n="nav-overview">نظرة عامة</span></a>
+          <a class="dashboard-nav-link active" href="connections.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#accounts"></use></svg></span><span data-i18n="nav-accounts">ربط الحسابات</span></a>
+          <a class="dashboard-nav-link" href="conversations.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#conversations"></use></svg></span><span data-i18n="nav-conversations">المحادثات (AI)</span></a>
+          <a class="dashboard-nav-link" href="orders.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#orders"></use></svg></span><span data-i18n="nav-orders">الطلبات</span></a>
+          <a class="dashboard-nav-link" href="products.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#products"></use></svg></span><span data-i18n="nav-products">المنتجات والمخزون</span></a>
+          <a class="dashboard-nav-link" href="customers.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#customers"></use></svg></span><span data-i18n="nav-customers">العملاء</span></a>
+          <a class="dashboard-nav-link" href="shipping.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#shipping"></use></svg></span><span data-i18n="nav-shipping">التوصيل</span></a>
+          <a class="dashboard-nav-link" href="profits.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#profits"></use></svg></span><span data-i18n="nav-profits">الأرباح</span></a>
+        </nav>
+        <a class="dashboard-logout" href="index.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#logout"></use></svg></span><span data-i18n="nav-logout">العودة للموقع</span></a>
+      </aside>
+      <main class="dashboard-main">
+        <header class="dashboard-header">
+          <button class="dashboard-menu-toggle" type="button" data-dashboard-menu-toggle data-i18n-aria="menu-open" aria-expanded="false" aria-controls="dashboard-sidebar" aria-label="فتح القائمة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+          <h1 data-i18n="nav-accounts">ربط الحسابات</h1>
+          <button class="language-toggle dashboard-language" type="button" data-language-toggle aria-label="Switch language">EN <span>文</span></button>
+        </header>
+        <div class="dashboard-content">
+          <p class="connections-description" data-i18n="accounts-description">اربط حساباتك ليقرأ الذكاء الاصطناعي رسائل الزبائن ويفهم طلباتهم ويصنع طلبات مسودة وحده.</p>
+          <div class="connection-grid">
+            <article class="connection-card">
+              <span class="connection-icon instagram-color">◎</span>
+              <h2 data-i18n="account-instagram">إنستغرام</h2>
+              <p class="connection-type" data-i18n="account-dm">رسائل DM والتعليقات</p>
+              <p class="connection-requirement" data-i18n="account-requirement-instagram">يتطلب حساب Business/Creator مربوط بصفحة Facebook.</p>
+              <button type="button" class="connect-button" data-connect-account><span>♧</span><span data-i18n="connect-account">ربط الحساب</span></button>
+            </article>
+            <article class="connection-card">
+              <span class="connection-icon facebook-color">f</span>
+              <h2 data-i18n="account-facebook">فيسبوك</h2>
+              <p class="connection-type" data-i18n="account-messages">رسائل صفحتك</p>
+              <p class="connection-requirement" data-i18n="account-requirement-facebook">يتطلب صفحة Facebook تكون أنت مسؤولها.</p>
+              <button type="button" class="connect-button" data-connect-account><span>♧</span><span data-i18n="connect-account">ربط الحساب</span></button>
+            </article>
+            <article class="connection-card">
+              <span class="connection-icon tiktok-color">♪</span>
+              <h2 data-i18n="account-tiktok">تيك توك</h2>
+              <p class="connection-type" data-i18n="account-tiktok-messages">رسائل تيك توك</p>
+              <p class="connection-requirement" data-i18n="account-requirement-tiktok">رسائل TikTok غير متاحة للمطورين حاليًا.</p>
+              <button type="button" class="connect-button" data-connect-account><span>♧</span><span data-i18n="connect-account">ربط الحساب</span></button>
+            </article>
+            <article class="connection-card website-card">
+              <span class="connection-icon website-color">◎</span>
+              <h2 data-i18n="account-website">الموقع الإلكتروني</h2>
+              <p class="connection-type" data-i18n="account-store-orders">طلبات متجرك</p>
+              <p class="connection-requirement" data-i18n="account-website-help">ضع رابط متجرك أو موقعك.</p>
+              <form class="website-form" data-website-form>
+                <input name="website" type="url" placeholder="https://mystore.com" aria-label="Store website" required />
+                <button type="submit" class="connect-button website-save" data-i18n="save">حفظ</button>
+              </form>
+            </article>
+          </div>
+          <p class="connection-message" role="status" aria-live="polite" data-connection-message></p>
+          <section class="manychat-note">
+            <h2 data-i18n="manychat-title">طريقة بديلة لربط Instagram (عبر ManyChat)</h2>
+            <p data-i18n="manychat-description">اربط Instagram في ManyChat لإرسال رسائلك إلى VENDO.</p>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071a31" />
+    <meta name="description" content="سجّل الدخول إلى حساب Vendo الخاص بك." />
+    <title>Vendo — البيع بذكاء</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body class="vendo-page login-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Vendo home"><span>VENDO</span><img class="brand-mark" src="assets/vendo-logo.svg" alt="" /></a>
+      <div class="topbar-actions">
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Switch language">EN <span>文</span></button>
+        <a class="top-login" href="index.html" data-i18n="back">العودة للرئيسية</a>
+      </div>
+    </header>
+    <main class="login-main">
+      <section class="login-card">
+        <p class="intro-kicker" data-i18n="login-kicker">مساحتك لإدارة البيع</p>
+        <h1 data-i18n="login-title">مرحبًا بعودتك</h1>
+        <p class="login-description" data-i18n="login-description">سجل الدخول لمتابعة طلباتك ومبيعاتك.</p>
+
+        <form class="login-form" data-login-form novalidate>
+          <label for="login-email" data-i18n="email-label">البريد الإلكتروني</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" required />
+
+          <label for="login-password" data-i18n="password-label">كلمة المرور</label>
+          <div class="password-field">
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+            <button class="show-password" type="button" data-password-toggle data-password-target="login-password" aria-label="Show password">إظهار</button>
+          </div>
+
+          <button class="primary-button login-submit" type="submit" data-i18n="login">تسجيل الدخول</button>
+          <p class="form-message" data-auth-message aria-live="polite"></p>
+        </form>
+
+        <button class="google-auth-button" type="button" data-google-auth>
+          <span class="google-auth-mark" aria-hidden="true">G</span>
+          <span data-i18n="google-continue">المتابعة باستخدام Google</span>
+        </button>
+
+        <p class="signup-prompt">
+          <span data-i18n="no-account">ليس لديك حساب؟</span>
+          <a href="signup.html" data-i18n="create-account">أنشئ حسابًا</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

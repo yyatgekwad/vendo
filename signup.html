@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071a31" />
+    <meta name="description" content="أنشئ حساب Vendo وابدأ بإدارة مبيعاتك." />
+    <title>Vendo — البيع بذكاء</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body class="vendo-page login-page signup-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Vendo home"><span>VENDO</span><img class="brand-mark" src="assets/vendo-logo.svg" alt="" /></a>
+      <div class="topbar-actions">
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Switch language">EN <span>文</span></button>
+        <a class="top-login" href="login.html" data-i18n="login">تسجيل الدخول</a>
+      </div>
+    </header>
+    <main class="login-main signup-main">
+      <section class="login-card signup-card">
+        <p class="intro-kicker" data-i18n="signup-kicker">انضم إلى Vendo</p>
+        <h1 data-i18n="signup-title">ابدأ باستخدام Vendo</h1>
+        <p class="login-description signup-description" data-i18n="signup-description">أدخل بياناتك وابدأ بإدارة البيع بذكاء.</p>
+
+        <form class="login-form signup-form" data-signup-form novalidate>
+          <div class="signup-name-row">
+            <div class="signup-field">
+              <label for="signup-first-name" data-i18n="first-name">الاسم</label>
+              <input id="signup-first-name" name="firstName" type="text" autocomplete="given-name" required />
+            </div>
+            <div class="signup-field">
+              <label for="signup-last-name" data-i18n="last-name">اللقب</label>
+              <input id="signup-last-name" name="lastName" type="text" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <label for="signup-phone" data-i18n="phone">رقم الهاتف</label>
+          <input id="signup-phone" name="phone" type="tel" autocomplete="tel" required />
+
+          <label for="signup-email" data-i18n="email-label">البريد الإلكتروني</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" required />
+
+          <label for="signup-password" data-i18n="password-label">كلمة المرور</label>
+          <div class="password-field">
+            <input id="signup-password" name="password" type="password" autocomplete="new-password" required />
+            <button class="show-password" type="button" data-password-toggle data-password-target="signup-password" aria-label="Show password">إظهار</button>
+          </div>
+
+          <label for="signup-confirm-password" data-i18n="confirm-password">أعد إدخال كلمة المرور</label>
+          <div class="password-field">
+            <input id="signup-confirm-password" name="confirmPassword" type="password" autocomplete="new-password" required />
+            <button class="show-password" type="button" data-password-toggle data-password-target="signup-confirm-password" aria-label="Show password">إظهار</button>
+          </div>
+
+          <p class="password-match" data-password-match aria-live="polite"></p>
+          <button class="primary-button login-submit" type="submit" data-i18n="signup-title">ابدأ باستخدام Vendo</button>
+          <p class="form-message" data-auth-message aria-live="polite"></p>
+        </form>
+
+        <button class="google-auth-button" type="button" data-google-auth>
+          <span class="google-auth-mark" aria-hidden="true">G</span>
+          <span data-i18n="google-continue">المتابعة باستخدام Google</span>
+        </button>
+
+        <p class="signup-prompt">
+          <span data-i18n="has-account">لديك حساب بالفعل؟</span>
+          <a href="login.html" data-i18n="login">تسجيل الدخول</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

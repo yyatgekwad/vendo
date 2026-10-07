@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#07101f" />
+    <title>التوصيل — Vendo</title>
+    <link rel="stylesheet" href="css/styles.css" /><script src="js/app.js" defer></script>
+  </head>
+  <body class="dashboard-page" data-page-title="page-shipping">
+    <div class="dashboard-layout"><button class="dashboard-backdrop" type="button" data-dashboard-backdrop data-i18n-aria="menu-close" aria-label="إغلاق القائمة"></button><aside class="dashboard-sidebar" id="dashboard-sidebar">
+      <a class="dashboard-brand" href="dashboard.html"><img class="brand-mark" src="assets/vendo-logo.svg" alt="" /><span><strong>VENDO</strong><small data-i18n="dashboard-tagline">بيع ذكي. نتائج حقيقية.</small></span></a>
+      <nav class="dashboard-nav" aria-label="القائمة الرئيسية">
+        <a class="dashboard-nav-link" href="dashboard.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#overview"></use></svg></span><span data-i18n="nav-overview">نظرة عامة</span></a>
+        <a class="dashboard-nav-link" href="connections.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#accounts"></use></svg></span><span data-i18n="nav-accounts">ربط الحسابات</span></a>
+        <a class="dashboard-nav-link" href="conversations.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#conversations"></use></svg></span><span data-i18n="nav-conversations">المحادثات (AI)</span></a>
+        <a class="dashboard-nav-link" href="orders.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#orders"></use></svg></span><span data-i18n="nav-orders">الطلبات</span></a>
+        <a class="dashboard-nav-link" href="products.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#products"></use></svg></span><span data-i18n="nav-products">المنتجات والمخزون</span></a>
+        <a class="dashboard-nav-link" href="customers.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#customers"></use></svg></span><span data-i18n="nav-customers">العملاء</span></a>
+        <a class="dashboard-nav-link active" href="shipping.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#shipping"></use></svg></span><span data-i18n="nav-shipping">التوصيل</span></a>
+        <a class="dashboard-nav-link" href="profits.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#profits"></use></svg></span><span data-i18n="nav-profits">الأرباح</span></a>
+      </nav><a class="dashboard-logout" href="index.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#logout"></use></svg></span><span data-i18n="nav-logout">العودة للموقع</span></a>
+    </aside><main class="dashboard-main">
+      <header class="dashboard-header"><button class="dashboard-menu-toggle" type="button" data-dashboard-menu-toggle data-i18n-aria="menu-open" aria-expanded="false" aria-controls="dashboard-sidebar" aria-label="فتح القائمة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button><h1 data-i18n="page-shipping">التوصيل</h1><button class="language-toggle dashboard-language" type="button" data-language-toggle>EN <span>文</span></button></header>
+      <div class="dashboard-content"><section class="inventory-stats"><article class="inventory-stat"><span data-i18n="shipping-open">طلبات تنتظر الشحن</span><strong data-shipping-open>0</strong></article><article class="inventory-stat"><span data-i18n="shipping-progress">قيد التوصيل</span><strong data-shipping-progress>0</strong></article><article class="inventory-stat"><span data-i18n="shipping-delivered">تم توصيلها</span><strong data-shipping-delivered>0</strong></article></section>
+        <section class="inventory-panel"><div class="inventory-panel-heading"><div><h2 data-i18n="shipping-list">متابعة التوصيل</h2><p data-i18n="shipping-help">حدّث حالة الطلب لمتابعة الشحن.</p></div></div><p class="inventory-message" role="status" aria-live="polite" data-shipping-message></p><div class="inventory-table-wrap"><table class="inventory-table"><thead><tr><th data-i18n="order-customer">العميل</th><th data-i18n="phone">رقم الهاتف</th><th data-i18n="order-product">المنتج</th><th data-i18n="order-status">الحالة</th><th data-i18n="shipping-update">تحديث الحالة</th></tr></thead><tbody data-shipping-rows></tbody></table><div class="inventory-empty" data-shipping-empty><h3 data-i18n="shipping-empty">لا توجد طلبات للتوصيل</h3><p data-i18n="shipping-empty-help">أضف طلبًا من صفحة الطلبات لبدء المتابعة.</p><a class="dashboard-empty-link" href="orders.html" data-i18n="nav-orders">الطلبات</a></div></div></section></div>
+    </main></div>
+  </body>
+</html>

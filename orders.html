@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#07101f" />
+    <title>الطلبات — Vendo</title>
+    <link rel="stylesheet" href="css/styles.css" /><script src="js/app.js" defer></script>
+  </head>
+  <body class="dashboard-page" data-page-title="page-orders">
+    <div class="dashboard-layout"><button class="dashboard-backdrop" type="button" data-dashboard-backdrop data-i18n-aria="menu-close" aria-label="إغلاق القائمة"></button><aside class="dashboard-sidebar" id="dashboard-sidebar">
+      <a class="dashboard-brand" href="dashboard.html"><img class="brand-mark" src="assets/vendo-logo.svg" alt="" /><span><strong>VENDO</strong><small data-i18n="dashboard-tagline">بيع ذكي. نتائج حقيقية.</small></span></a>
+      <nav class="dashboard-nav" aria-label="القائمة الرئيسية">
+        <a class="dashboard-nav-link" href="dashboard.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#overview"></use></svg></span><span data-i18n="nav-overview">نظرة عامة</span></a>
+        <a class="dashboard-nav-link" href="connections.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#accounts"></use></svg></span><span data-i18n="nav-accounts">ربط الحسابات</span></a>
+        <a class="dashboard-nav-link" href="conversations.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#conversations"></use></svg></span><span data-i18n="nav-conversations">المحادثات (AI)</span></a>
+        <a class="dashboard-nav-link active" href="orders.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#orders"></use></svg></span><span data-i18n="nav-orders">الطلبات</span></a>
+        <a class="dashboard-nav-link" href="products.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#products"></use></svg></span><span data-i18n="nav-products">المنتجات والمخزون</span></a>
+        <a class="dashboard-nav-link" href="customers.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#customers"></use></svg></span><span data-i18n="nav-customers">العملاء</span></a>
+        <a class="dashboard-nav-link" href="shipping.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#shipping"></use></svg></span><span data-i18n="nav-shipping">التوصيل</span></a>
+        <a class="dashboard-nav-link" href="profits.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#profits"></use></svg></span><span data-i18n="nav-profits">الأرباح</span></a>
+      </nav><a class="dashboard-logout" href="index.html"><span class="nav-icon"><svg aria-hidden="true"><use href="assets/nav-icons.svg#logout"></use></svg></span><span data-i18n="nav-logout">العودة للموقع</span></a>
+    </aside><main class="dashboard-main">
+      <header class="dashboard-header"><button class="dashboard-menu-toggle" type="button" data-dashboard-menu-toggle data-i18n-aria="menu-open" aria-expanded="false" aria-controls="dashboard-sidebar" aria-label="فتح القائمة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button><h1 data-i18n="page-orders">الطلبات</h1><button class="language-toggle dashboard-language" type="button" data-language-toggle>EN <span>文</span></button></header>
+      <div class="dashboard-content">
+        <section class="inventory-stats" aria-label="ملخص الطلبات">
+          <article class="inventory-stat"><span data-i18n="orders-total">إجمالي الطلبات</span><strong data-orders-total>0</strong></article>
+          <article class="inventory-stat"><span data-i18n="orders-open">قيد التنفيذ</span><strong data-orders-open>0</strong></article>
+          <article class="inventory-stat"><span data-i18n="orders-revenue">مبيعات مكتملة</span><strong data-orders-revenue>0</strong></article>
+        </section>
+        <section class="inventory-panel">
+          <div class="inventory-panel-heading"><div><h2 data-i18n="orders-list">قائمة الطلبات</h2><p data-i18n="orders-help">سجّل الطلبات وتابع حالة كل طلب.</p></div><button class="inventory-add-button" type="button" data-add-order data-i18n="order-add">إضافة طلب</button></div>
+          <p class="inventory-message" role="status" aria-live="polite" data-orders-message></p>
+          <div class="inventory-table-wrap"><table class="inventory-table"><thead><tr><th data-i18n="order-customer">العميل</th><th data-i18n="order-product">المنتج</th><th data-i18n="order-quantity">الكمية</th><th data-i18n="order-total">الإجمالي</th><th data-i18n="order-status">الحالة</th><th data-i18n="inventory-col-actions">الإجراءات</th></tr></thead><tbody data-orders-rows></tbody></table><div class="inventory-empty" data-orders-empty><h3 data-i18n="orders-empty">لا توجد طلبات</h3><p data-i18n="orders-empty-help">أضف أول طلب لمتابعته هنا.</p><button class="inventory-empty-button" type="button" data-add-order data-i18n="order-add">إضافة طلب</button></div></div>
+        </section>
+      </div>
+      <div class="inventory-modal" data-order-modal hidden><section class="inventory-dialog" role="dialog" aria-modal="true" aria-labelledby="order-dialog-title"><div class="inventory-dialog-heading"><h2 id="order-dialog-title" data-i18n="order-add">إضافة طلب</h2><button class="inventory-close" type="button" data-close-order aria-label="إغلاق">×</button></div>
+        <form class="inventory-form" data-order-form>
+          <label for="order-customer-name" data-i18n="order-customer">العميل</label><input id="order-customer-name" name="customer" type="text" maxlength="100" required />
+          <label for="order-phone" data-i18n="phone">رقم الهاتف</label><input id="order-phone" name="phone" type="tel" maxlength="30" required />
+          <label for="order-product-name" data-i18n="order-product">المنتج</label><input id="order-product-name" name="product" type="text" maxlength="100" required />
+          <div class="inventory-number-row">
+            <div><label for="order-quantity" data-i18n="order-quantity">الكمية</label><input id="order-quantity" name="quantity" type="number" min="1" step="1" required /></div>
+            <div><label for="order-price" data-i18n="order-unit-price">سعر الوحدة</label><input id="order-price" name="price" type="number" min="0" step="0.01" required /></div>
+          </div>
+          <div class="inventory-number-row">
+            <div><label for="order-cost" data-i18n="order-unit-cost">تكلفة الوحدة</label><input id="order-cost" name="cost" type="number" min="0" step="0.01" required /></div>
+            <div><label for="order-status-select" data-i18n="order-status">الحالة</label><select id="order-status-select" name="status"><option value="new" data-i18n="status-new">جديد</option><option value="processing" data-i18n="status-processing">قيد التجهيز</option><option value="shipped" data-i18n="status-shipped">تم الشحن</option><option value="delivered" data-i18n="status-delivered">تم التوصيل</option><option value="cancelled" data-i18n="status-cancelled">ملغي</option></select></div>
+          </div>
+          <div class="inventory-form-actions"><button class="inventory-cancel" type="button" data-close-order data-i18n="cancel">إلغاء</button><button class="inventory-add-button" type="submit" data-i18n="order-save">حفظ الطلب</button></div>
+        </form>
+      </section></div>
+    </main></div>
+  </body>
+</html>
